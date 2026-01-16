@@ -5,15 +5,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.impute import SimpleImputer
+import joblib
+from pathlib import Path
 
-def train_baseline():
+MODEL_DIR = Path("models")
+MODEL_DIR.mkdir(exist_ok=True)
+
+def train_and_save():
     df = build_player_features()
     df["impact_score"] = compute_impact_score(df)
 
     X = df.select_dtypes(include=["int64", "float64"]).drop(columns=["impact_score"])
     y = df["impact_score"]
 
-    # Impute missing values
     imputer = SimpleImputer(strategy="mean")
     X_imputed = imputer.fit_transform(X)
 
@@ -26,14 +30,13 @@ def train_baseline():
 
     preds = model.predict(X_test)
 
-    mae = mean_absolute_error(y_test, preds)
-    r2 = r2_score(y_test, preds)
+    print("MAE:", mean_absolute_error(y_test, preds))
+    print("R2:", r2_score(y_test, preds))
 
-    print("Baseline Linear Regression")
-    print("MAE:", mae)
-    print("R2 Score:", r2)
+    joblib.dump(model, MODEL_DIR / "playerlens_model.pkl")
+    joblib.dump(imputer, MODEL_DIR / "imputer.pkl")
 
-    return model, imputer
+    print("Model and imputer saved.")
 
 if __name__ == "__main__":
-    train_baseline()
+    train_and_save()
