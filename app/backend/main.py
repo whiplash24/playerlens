@@ -1,3 +1,5 @@
+from fastapi.middleware.cors import CORSMiddleware
+
 from fastapi import FastAPI
 import joblib
 import pandas as pd
@@ -6,6 +8,14 @@ from pathlib import Path
 from ml.feature_engineering import build_player_features
 
 app = FastAPI(title="PlayerLens API")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 MODEL_PATH = Path("models/playerlens_model.pkl")
 IMPUTER_PATH = Path("models/imputer.pkl")
