@@ -208,3 +208,12 @@ __marimo__/
 
 models/
 
+# Large datasets
+data/raw/
+data/processed/
+
+# Databases
+*.sqlite
+*.db
+
+
