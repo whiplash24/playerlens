@@ -1,5 +1,6 @@
 import pandas as pd
-from data_loader import load_players, load_player_attributes
+from ml.data_loader import load_players, load_player_attributes
+
 
 def build_player_features():
     players = load_players()
