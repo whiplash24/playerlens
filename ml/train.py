@@ -1,5 +1,5 @@
-from feature_engineering import build_player_features
-from model import compute_impact_score
+from ml.feature_engineering import build_player_features
+from ml.model import compute_impact_score
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression

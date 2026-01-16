@@ -9,9 +9,21 @@ async function loadPlayer() {
     document.getElementById("impactScore").innerText =
         "Impact Score: " + data.impact_score.toFixed(2);
 
+    document.getElementById("position").innerText = data.position;
     document.getElementById("height").innerText = data.height ?? "—";
     document.getElementById("weight").innerText = data.weight ?? "—";
 
+    // Impact Breakdown
+    document.querySelectorAll(".breakdown-value")[0].innerText =
+        data.impact_breakdown.ability.toFixed(1);
+
+    document.querySelectorAll(".breakdown-value")[1].innerText =
+        data.impact_breakdown.physical.toFixed(1);
+
+    document.querySelectorAll(".breakdown-value")[2].innerText =
+        data.impact_breakdown.consistency.toFixed(1);
+
+    // Top attributes
     const grid = document.querySelector(".attributes-grid");
     grid.innerHTML = "";
 

@@ -1,6 +1,6 @@
 import pandas as pd
-from feature_engineering import build_player_features
-from model import compute_impact_score
+from ml.feature_engineering import build_player_features
+from ml.model import compute_impact_score
 
 from sklearn.linear_model import LinearRegression
 from sklearn.impute import SimpleImputer
