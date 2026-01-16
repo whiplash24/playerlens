@@ -1,0 +1,134 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* HOME PAGE */
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-container p {
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+input {
+    padding: 0.7rem;
+    width: 300px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 6px;
+    background: #38bdf8;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* PLAYER PAGE */
+.profile-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.profile-container h1 {
+    font-size: 2.5rem;
+}
+
+.profile-container h2 {
+    color: #38bdf8;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: #020617;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.info-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #38bdf8;
+}
+
+.muted-text {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+/* IMPACT BREAKDOWN */
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.breakdown-card {
+    background: #0f172a;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.breakdown-card h4 {
+    margin-bottom: 0.5rem;
+    color: #38bdf8;
+}
+
+.breakdown-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+/* ATTRIBUTES */
+.attributes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.attribute-chip {
+    background: #0f172a;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    background: transparent;
+    color: #38bdf8;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
