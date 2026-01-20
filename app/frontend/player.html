@@ -2,72 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PlayerLens | Profile</title>
+    <title>PlayerLens</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="profile-container">
-        <button class="back-btn" onclick="goBack()">← Back to Search</button>
+<div class="top-bar">
+    <button onclick="window.location.href='index.html'">← Back to Search</button>
+</div>
 
+<div class="player-container">
+    <div class="header">
         <h1 id="playerName"></h1>
-        <h2 id="impactScore"></h2>
+        <h2>Impact Score: <span id="impactScore"></span></h2>
+    </div>
 
-        <!-- PLAYER SNAPSHOT -->
-        <div class="info-card">
-            <h3>Player Snapshot</h3>
-            <p><strong>Position:</strong> <span id="position">Coming soon</span></p>
-            <p><strong>Height:</strong> <span id="height">—</span> cm</p>
-            <p><strong>Weight:</strong> <span id="weight">—</span> kg</p>
-        </div>
+    <div class="grid">
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <div class="card">
+                <h3>Player Snapshot</h3>
+                <p><strong>Position:</strong> <span id="position"></span></p>
+                <p><strong>Height:</strong> <span id="height"></span> cm</p>
+                <p><strong>Weight:</strong> <span id="weight"></span> kg</p>
+            </div>
 
-        <!-- CLUBS -->
-        <div class="info-card">
-            <h3>Clubs</h3>
-            <p class="muted-text">
-                Club history and current team information will be displayed here.
-            </p>
-        </div>
-
-        <!-- IMPACT BREAKDOWN -->
-        <div class="info-card">
-            <h3>Impact Breakdown</h3>
-
-            <div class="breakdown-grid">
-                <div class="breakdown-card">
-                    <h4>Ability</h4>
-                    <p class="breakdown-value">—</p>
-                    <p class="muted-text">Technical contribution and skill level</p>
-                </div>
-
-                <div class="breakdown-card">
-                    <h4>Physical</h4>
-                    <p class="breakdown-value">—</p>
-                    <p class="muted-text">Stamina, strength, and physical reliability</p>
-                </div>
-
-                <div class="breakdown-card">
-                    <h4>Consistency</h4>
-                    <p class="breakdown-value">—</p>
-                    <p class="muted-text">Performance stability across matches</p>
-                </div>
+            <div class="card">
+                <h3>Clubs</h3>
+                <p class="muted">Club history and current team information will be displayed here.</p>
             </div>
         </div>
 
-        <!-- TOP CONTRIBUTING ATTRIBUTES -->
-        <div class="info-card">
-            <h3>Top Contributing Attributes</h3>
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <h3>Impact Breakdown</h3>
 
-            <div class="attributes-grid"></div>
+            <div class="breakdown">
+                <div class="metric-card">
+                    <h4>Ability</h4>
+                    <p class="score" id="abilityScore"></p>
+                    <p class="muted">Technical contribution and skill level</p>
+                </div>
 
-            <p class="muted-text" style="margin-top: 1rem;">
-                These attributes contributed most to the player’s impact score.
-            </p>
+                <div class="metric-card">
+                    <h4>Physical</h4>
+                    <p class="score" id="physicalScore"></p>
+                    <p class="muted">Stamina, strength, and physical reliability</p>
+                </div>
+
+                <div class="metric-card">
+                    <h4>Consistency</h4>
+                    <p class="score" id="consistencyScore"></p>
+                    <p class="muted">Performance stability across matches</p>
+                </div>
+            </div>
         </div>
-
     </div>
+</div>
 
-    <script src="player.js"></script>
+<script src="player.js"></script>
 </body>
 </html>
