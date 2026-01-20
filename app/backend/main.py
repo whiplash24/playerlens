@@ -93,7 +93,12 @@ def root():
 
 @app.get("/players")
 def list_players():
-    return features_df[["player_api_id", "player_name"]].head(200).to_dict(orient="records")
+    return (
+        features_df[["player_api_id", "player_name"]]
+        .sort_values("player_name")
+        .to_dict(orient="records")
+    )
+
 
 @app.get("/player/{player_id}")
 def get_player(player_id: int):
